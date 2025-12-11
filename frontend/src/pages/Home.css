@@ -1,0 +1,33 @@
+﻿.hero {
+  width: 100%;
+  height: 350px;
+  background: #000;
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background: #d9453c;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.footer {
+  padding: 40px;
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}

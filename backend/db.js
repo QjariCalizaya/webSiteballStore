@@ -1,13 +1,12 @@
-﻿const mysql = require('mysql2');
+﻿const { Pool } = require("pg");
+require("dotenv").config();
 
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '123456', // tu contraseña
-    database: 'myball',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+const pool = new Pool({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
 });
 
-module.exports = pool.promise();
+module.exports = pool;
