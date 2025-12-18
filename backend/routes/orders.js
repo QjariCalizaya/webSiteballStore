@@ -77,4 +77,24 @@ router.post("/", auth, async (req, res) => {
     }
 });
 
+// Obtener pedidos del usuario logueado
+router.get("/my", auth, async (req, res) => {
+    const userId = req.user.id;
+
+    try {
+        const result = await db.query(
+            `SELECT id, status, total_price, created_at
+             FROM orders
+             WHERE user_id = $1
+             ORDER BY created_at DESC`,
+            [userId]
+        );
+
+        res.json(result.rows);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
 module.exports = router;
