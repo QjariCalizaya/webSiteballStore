@@ -52,6 +52,7 @@ function Navbar() {
 
           <a href="/orders">Заказы</a>
           <a href="/cart">Корзина</a>
+          <a href="/project">О проекте</a>
           <div className="menu-icon">☰</div>
         </div>
 

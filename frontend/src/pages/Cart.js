@@ -62,52 +62,69 @@ function Cart() {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  if (cart.length === 0)
-    return <h2 className="empty">Корзина пуста</h2>;
 
-  return (
-    <div className="cart-page">
-        <button className="back-btn" onClick={() => window.history.back()}>
-        ← Назад
-        </button>
+return (
+  <div className="cart-page">
+    <button className="back-btn" onClick={() => window.history.back()}>
+      ← Назад
+    </button>
 
-      <h2>Корзина</h2>
+    <h2>Корзина</h2>
 
-      <div className="cart-box">
-        {cart.map(item => (
-          <div key={item.id} className="cart-item">
+    {cart.length === 0 ? (
+      <div className="empty-cart">
+        <p className="empty-title">Ваша корзина пуста</p>
+        <p className="empty-subtitle">
+          Самое время выбрать отличный мяч 😉
+        </p>
 
-            {/* Imagen */}
-            <img src={`http://localhost:3000${item.image_url}`} alt={item.name} />
-
-            {/* Info */}
-            <div className="cart-info">
-              <h3>{item.name}</h3>
-              <p>Цена: ${item.price}</p>
-
-              <input 
-                type="number"
-                min="1"
-                value={item.quantity}
-                onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
+        <div className="empty-actions">
+          <button onClick={() => window.location.href = "/"}>
+            Перейти к покупкам
+          </button>
+        </div>
+      </div>
+    ) : (
+      <>
+        <div className="cart-box">
+          {cart.map(item => (
+            <div key={item.id} className="cart-item">
+              <img
+                src={`http://localhost:3000${item.image_url}`}
+                alt={item.name}
               />
 
-              <button onClick={() => handleRemove(item.id)}>
-                Удалить
-              </button>
+              <div className="cart-info">
+                <h3>{item.name}</h3>
+                <p>Цена: ${item.price}</p>
+
+                <input
+                  type="number"
+                  min="1"
+                  value={item.quantity}
+                  onChange={(e) =>
+                    handleQuantityChange(item.id, parseInt(e.target.value))
+                  }
+                />
+
+                <button onClick={() => handleRemove(item.id)}>
+                  Удалить
+                </button>
+              </div>
             </div>
+          ))}
+        </div>
 
-          </div>
-        ))}
-      </div>
+        <h2 className="total">Итого: ${total}</h2>
 
-      <h2 className="total">Итого: ${total}</h2>
+        <button className="checkout-btn" onClick={checkout}>
+          Оформить заказ
+        </button>
+      </>
+    )}
+  </div>
+);
 
-      <button className="checkout-btn" onClick={checkout}>
-        Оформить заказ
-      </button>
-    </div>
-  );
 }
 
 export default Cart;
