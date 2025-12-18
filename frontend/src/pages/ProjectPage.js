@@ -116,17 +116,51 @@ export default function ProjectPage() {
 
       <section className="card">
         <h2>Диаграммы</h2>
-        <div className="img-grid">
-          <figure className="img-box">
-            <img src="/diagramaClases.png" className="real-img" />
-            <figcaption>Диаграмма классов</figcaption>
-          </figure>
-          <figure className="img-box">
-            <img src="/diagramaComponentes.png" className="real-img" />
-            <figcaption>Диаграмма компонентов</figcaption>
-          </figure>
+
+        <div className="diagram-list">
+
+          <div className="diagram-item">
+            <img
+              src="/diagramaClases.png"
+              alt="Диаграмма классов"
+              className="diagram-img"
+            />
+            <h3>Диаграмма классов</h3>
+            <p>
+              В данной диаграмме мы можем увидеть классы User, Warehouse, Order, Courier, WarehouseWorker, Product и OrderItem, каждый из которых связан между собой отношениями 1:N или 1:1, что позволяет организовать процесс продаж, доставки, управления складскими запасами и работы с пользователями.
+            </p>
+          </div>
+
+          <div className="diagram-item">
+            <img
+              src="/diagramaComponentes.png"
+              alt="Диаграмма компонентов"
+              className="diagram-img"
+            />
+            <h3>Диаграмма компонентов</h3>
+            <p>
+В данной диаграмме компонентов можно чётко увидеть, что мой интернет-магазин состоит из трёх ключевых компонентов: фронтенда веб-сайта, бэкенда и мобильного приложения (по типу Amazon или Ozon), которое будет подключено напрямую к веб-сайту, а не к базе данных. Это сделано для того, чтобы использовать большую часть уже реализованной логики и функциональности сайта.
+
+Веб-сайт будет отвечать только за отображение пользовательского интерфейса (UI) и будет иметь API Gateway, подключённый к базе данных, который реализует всю бизнес-логику.
+            </p>
+          </div>
+
+          <div className="diagram-item">
+            <img
+              src="/comunicacoin.png"
+              alt="Диаграмма компонентов"
+              className="diagram-img"
+            />
+            <h3>Диаграмма компонентов</h3>
+            <p>
+Здесь можно увидеть, как пользователь сначала создаёт заказ на покупку через фронтенд. Эти данные передаются в API Gateway, который формирует заказ и передаёт его в сервис заказов бэкенда. Далее заказ регистрируется в базе данных и проходит проверку, после чего либо подтверждается, либо отклоняется. Информация о результате создания заказа возвращается пользователю обратно через фронтенд.
+            </p>
+          </div>
+
+
         </div>
       </section>
+
     </div>
   );
 }
