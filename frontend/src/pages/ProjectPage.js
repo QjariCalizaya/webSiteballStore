@@ -67,7 +67,7 @@ export default function ProjectPage() {
         </p>
       </header>
 
-      <section className="card">
+      <section className="project-card">
         <h2>Цель</h2>
         <p>
           Обеспечить удобную покупку товаров и доставку по всей Москве и России.
@@ -83,7 +83,7 @@ export default function ProjectPage() {
         </ul>
       </section>
 
-      <section className="card">
+      <section className="project-card">
         <h2>Целевая аудитория</h2>
         <div className="img-grid">
           <figure className="img-box">
@@ -98,7 +98,7 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      <section className="card">
+      <section className="project-card">
         <h2>Техностек</h2>
         <ul className="stack">
           <li><strong>Frontend:</strong> React / Next.js</li>
@@ -109,12 +109,12 @@ export default function ProjectPage() {
         </ul>
       </section>
 
-      <section className="card">
+      <section className="project-card">
         <h2>Временная диаграмма</h2>
         <Gantt />
       </section>
 
-      <section className="card">
+      <section className="project-card">
         <h2>Диаграммы</h2>
 
         <div className="diagram-list">
@@ -160,6 +160,43 @@ export default function ProjectPage() {
 
         </div>
       </section>
+
+      <section className="project-card">
+      <h2>тестирование</h2>
+      <h3>Описание:</h3>
+      <p>
+Во время тестирования, проведённого с клиентом Вахидом, было установлено, что сайт работает в соответствии с ожиданиями. В процессе использования и регистрации не возникло никаких затруднений. Несмотря на то, что сайт находится на стадии бета-версии, он уже может использоваться клиентами.
+      </p>
+      <h3>Замечания клиента:</h3>
+      <p>
+        Хотя сайт в целом функционирует корректно, в некоторых аспектах он выглядит пустым, как будто не хватает контента. Также есть отдельные страницы, которые не полностью соблюдают заданную цветовую палитру.
+      </p>
+      <h3>заключение</h3>
+      <p>
+        Данные замечания принимаются во внимание для последующего улучшения сайта.
+      </p>
+
+      <iframe width="720" height="405" src="https://rutube.ru/play/embed/97ffd9b538718eb70d63cfa91d4e4c01"  allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </section>
+
+<section className="card">
+  <h2>Документы</h2>
+
+  <div className="documents-list">
+    <a href="/docs/проект.pdf" target="_blank" rel="noopener noreferrer">
+      База проекта
+    </a>
+
+    <a href="/docs/ТЗ на АС.pdf" target="_blank" rel="noopener noreferrer">
+      Техническое задание (ТЗ)
+    </a>
+
+    <a href="/docs/уприс ПРОЕКТ.pdf" target="_blank" rel="noopener noreferrer">
+      Проект
+    </a>
+  </div>
+</section>
+
 
     </div>
   );

@@ -52,7 +52,7 @@
 /* =========================
    CARD
 ========================= */
-.card {
+.project-card {
   background: #fff;
   border-radius: 18px;
   padding: 28px;
@@ -60,7 +60,7 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-.card h2 {
+.project-card h2 {
   margin-top: 0;
   color: #ee0e0e;
 }
@@ -68,7 +68,7 @@
 /* =========================
    TEXT / LISTS
 ========================= */
-.card ul {
+.project-card ul {
   padding-left: 22px;
 }
 
@@ -218,4 +218,25 @@ figcaption {
   .diagram-item {
     padding: 24px 20px;
   }
+}
+
+/* ===== DOCUMENTS ===== */
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.documents-list a {
+  font-size: 20px;          /* similar a h2 pero menor */
+  font-weight: 600;
+  color: #111;              /* negro, como pediste */
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.documents-list a:hover {
+  color: #ee0e0e;
+  text-decoration: underline;
 }
